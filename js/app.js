@@ -8,8 +8,17 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'myApp.controllers'
-]).run(function($rootScope, $location) {
+]).run(function($rootScope, $location,  $anchorScroll, $routeParams) {
     $rootScope.location = $location;
+    $rootScope.anchorScroll = $anchorScroll;
+    $rootScope.routeParams = $routeParams;
+   
+
+    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+                    $location.hash($routeParams.scrollTo);
+                    $anchorScroll();  
+                    }
+                   );
 }).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/:p', {templateUrl: function(params){

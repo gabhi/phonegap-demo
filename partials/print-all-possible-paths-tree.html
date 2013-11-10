@@ -4,26 +4,26 @@
    
 </header>
 <div class="content">
-  {{location.path()}}
+  {{location.path()}}--  {{scrollTo}}
  <ul class="segmented-controller">
   <li class="">
-    <a ng-href="#{{location.path()}}#item1">Thing one</a>
+    <a ng-click="scrollTo('item1')">Thing one</a>
   </li>
   <li>
-    <a href="#{{location.path()}}#item2">Thing two</a>
+    <a ng-click="scrollTo('item2')">Thing two</a>
   </li>
   <li>
-    <a href="#{{location.path()}}#item3">Thing three</a>
+    <a href="#{{location.path()}}?scrollTo=item3">Thing three</a>
   </li>
 </ul>
-<ul class="inset list">
-  <li id="item1" class="segmented-controller-item">
+<ul class=" list">
+  <li id="#item1" class="segmented-controller-item">
     Item 1
   </li>
-  <li id="item2" class="segmented-controller-item">
+  <li id="#item2" class="segmented-controller-item">
     Item 2
   </li>
-  <li id="item3" class="segmented-controller-item">
+  <li id="#item3" class="segmented-controller-item">
     Item 3
   </li>
 </ul>
