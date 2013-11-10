@@ -1,0 +1,42 @@
+<header class="bar-title">
+   
+  <h1 class="title">Print all </h1>
+   
+</header>
+<div class="content">
+   
+  <ul class="segmented-controller">
+    <li>
+      <a href="#">Sol</a>
+    </li>
+    <li>
+      <a href="http://www.youtube.com/watch?v=jQS9hVxU5k8">Video</a>
+    </li>
+     <li>
+      <a href="#">Stuck</a>
+    </li>
+  </ul>
+ 
+ <div><code>void</code> <code>printPathsRecur(</code><code>struct</code> <code>node* node, </code><code>int</code> <code>path[], </code><code>int</code> <code>pathLen)</code></div>
+<div><code>{</code></div>
+<div><code>  </code><code>if</code> <code>(node==NULL) </code><code>return</code><code>;</code></div>
+<div></div>
+<div><code>  </code><code>/* append this node to the path array */</code></div>
+<div><code>  </code><code>path[pathLen] = node-&gt;data;</code></div>
+<div><code>  </code><code>pathLen++;</code></div>
+<div></div>
+<div><code>  </code><code>/* it's a leaf, so print the path that led to here */</code></div>
+<div><code>  </code><code>if</code> <code>(node-&gt;left==NULL &amp;&amp; node-&gt;right==NULL)</code></div>
+<div><code>  </code><code>{</code></div>
+<div><code>    </code><code>printArray(path, pathLen);</code></div>
+<div><code>  </code><code>}</code></div>
+<div><code>  </code><code>else</code></div>
+<div><code>  </code><code>{</code></div>
+<div><code>  </code><code>/* otherwise try both subtrees */</code></div>
+<div><code>    </code><code>printPathsRecur(node-&gt;left, path, pathLen);</code></div>
+<div><code>    </code><code>printPathsRecur(node-&gt;right, path, pathLen);</code></div>
+<div><code>  </code><code>}</code></div>
+<div><code>}</code></div>
+<div></div>
+<div></div>
+</div>
