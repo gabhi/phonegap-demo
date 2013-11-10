@@ -4,20 +4,20 @@
    
 </header>
 <div class="content">
-   
+  {{location.path()}}
  <ul class="segmented-controller">
-  <li class="active">
-    <a href="#item1">Thing one</a>
+  <li class="">
+    <a ng-href="#{{location.path()}}#item1">Thing one</a>
   </li>
   <li>
-    <a href="#item2">Thing two</a>
+    <a href="#{{location.path()}}#item2">Thing two</a>
   </li>
   <li>
-    <a href="#item3">Thing three</a>
+    <a href="#{{location.path()}}#item3">Thing three</a>
   </li>
 </ul>
 <ul class="inset list">
-  <li id="item1" class="segmented-controller-item active">
+  <li id="item1" class="segmented-controller-item">
     Item 1
   </li>
   <li id="item2" class="segmented-controller-item">

@@ -8,7 +8,9 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'myApp.controllers'
-]).
+]).run(function($rootScope, $location) {
+    $rootScope.location = $location;
+}).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/:p', {templateUrl: function(params){
   												 return 'partials/'+params.p+'.html'; 
