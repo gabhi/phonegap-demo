@@ -3,7 +3,7 @@
   <h1 class="title">Print all </h1>
    
 </header>
-<div class="content">
+<div class="content content-padded">
   {{location.path()}}--  {{rootScope.scrollTo}}
  <ul class="segmented-controller">
   <li class="">
@@ -18,10 +18,55 @@
 </ul>
 <ul class="list" id="segmented-controller-data-items">
   <li id="item1" class="segmented-controller-item">
-    Item 1
+   <div><code>void</code> <code>printPathsRecur(</code><code>struct</code> <code>node* node, </code><code>int</code> <code>path[], </code><code>int</code> <code>pathLen)</code></div>
+<div><code>{</code></div>
+<div><code>  </code><code>if</code> <code>(node==NULL) </code><code>return</code><code>;</code></div>
+<div></div>
+<div><code>  </code><code>/* append this node to the path array */</code></div>
+<div><code>  </code><code>path[pathLen] = node-&gt;data;</code></div>
+<div><code>  </code><code>pathLen++;</code></div>
+<div></div>
+<div><code>  </code><code>/* it's a leaf, so print the path that led to here */</code></div>
+<div><code>  </code><code>if</code> <code>(node-&gt;left==NULL &amp;&amp; node-&gt;right==NULL)</code></div>
+<div><code>  </code><code>{</code></div>
+<div><code>    </code><code>printArray(path, pathLen);</code></div>
+<div><code>  </code><code>}</code></div>
+<div><code>  </code><code>else</code></div>
+<div><code>  </code><code>{</code></div>
+<div><code>  </code><code>/* otherwise try both subtrees */</code></div>
+<div><code>    </code><code>printPathsRecur(node-&gt;left, path, pathLen);</code></div>
+<div><code>    </code><code>printPathsRecur(node-&gt;right, path, pathLen);</code></div>
+<div><code>  </code><code>}</code></div>
+<div><code>}</code></div>
+<div></div>
+<div></div>
+
+<div><code>void</code> <code>printPathsRecur(</code><code>struct</code> <code>node* node, </code><code>int</code> <code>path[], </code><code>int</code> <code>pathLen)</code></div>
+<div><code>{</code></div>
+<div><code>  </code><code>if</code> <code>(node==NULL) </code><code>return</code><code>;</code></div>
+<div></div>
+<div><code>  </code><code>/* append this node to the path array */</code></div>
+<div><code>  </code><code>path[pathLen] = node-&gt;data;</code></div>
+<div><code>  </code><code>pathLen++;</code></div>
+<div></div>
+<div><code>  </code><code>/* it's a leaf, so print the path that led to here */</code></div>
+<div><code>  </code><code>if</code> <code>(node-&gt;left==NULL &amp;&amp; node-&gt;right==NULL)</code></div>
+<div><code>  </code><code>{</code></div>
+<div><code>    </code><code>printArray(path, pathLen);</code></div>
+<div><code>  </code><code>}</code></div>
+<div><code>  </code><code>else</code></div>
+<div><code>  </code><code>{</code></div>
+<div><code>  </code><code>/* otherwise try both subtrees */</code></div>
+<div><code>    </code><code>printPathsRecur(node-&gt;left, path, pathLen);</code></div>
+<div><code>    </code><code>printPathsRecur(node-&gt;right, path, pathLen);</code></div>
+<div><code>  </code><code>}</code></div>
+<div><code>}</code></div>
+<div></div>
+<div></div>
   </li>
   <li id="item2" class="segmented-controller-item">
-    Item 2
+    <iframe src="http://www.youtube.com/embed/WRT8kmFOQTw"></iframe>
+     
   </li>
   <li id="item3" class="segmented-controller-item">
     Item 3
